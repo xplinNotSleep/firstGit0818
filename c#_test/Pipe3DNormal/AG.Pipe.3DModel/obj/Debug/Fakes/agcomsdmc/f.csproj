@@ -1,0 +1,638 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <ItemGroup />
+  <ItemGroup>
+    <Compile Include="f.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <ProjectGuid>4d4775fb-2b8b-45dc-9a96-995c6eec14d4</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace />
+    <AssemblyName>AG.COM.SDM.Config.10.8.0.0.Fakes</AssemblyName>
+    <CodeContractsEnableRuntimeChecking>False</CodeContractsEnableRuntimeChecking>
+    <CodeContractsRuntimeCheckingLevel>Full</CodeContractsRuntimeCheckingLevel>
+    <OutputPath>b</OutputPath>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IntermediateOutputPath>o</IntermediateOutputPath>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <DefineConstants>DEBUG;TRACE;$(CommonDefineConstants)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>1587;1591</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <DefineConstants>TRACE;$(CommonDefineConstants)</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DocumentationFile>$(OutputPath)\$(AssemblyName).xml</DocumentationFile>
+    <NoWarn>1587;1591</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.QualityTools.Testing.Fakes">
+      <HintPath>D:\AppAll\VS2019\IDE\Common7\IDE\PublicAssemblies\Microsoft.QualityTools.Testing.Fakes.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Aliases>mqttf</Aliases>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Config">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.Config.dll</HintPath>
+      <Aliases>agcomsdmc</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Windows.Forms.dll</HintPath>
+      <Aliases>swf</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Drawing.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Accessibility">
+      <HintPath>C:\WINDOWS\Microsoft.Net\assembly\GAC_MSIL\Accessibility\v4.0_4.0.0.0__b03f5f7f11d50a3a\Accessibility.dll</HintPath>
+      <Aliases>a</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Utility">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.Utility.dll</HintPath>
+      <Aliases>agcomsdmu</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WeifenLuo.WinFormsUI.Docking">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Aliases>wlwfuid</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Model">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.Model.dll</HintPath>
+      <Aliases>agcomsdmm</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.ADF.dll</HintPath>
+      <Aliases>esriagisadf</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.SystemUI.dll</HintPath>
+      <Aliases>esriagissui</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.SystemUI">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.SystemUI.dll</HintPath>
+      <Aliases>agcomsdmsui</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Framework">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.Framework.dll</HintPath>
+      <Aliases>agcomsdmf</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.Controls.dll</HintPath>
+      <Aliases>esriagisc</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.System.dll</HintPath>
+      <Aliases>esriagiss</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+      <Aliases>esriagisg</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.Carto.dll</HintPath>
+      <Aliases>esriagiscr</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraBars.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\DevExpress.XtraBars.v14.2.dll</HintPath>
+      <Aliases>dexb142</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Data.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\DevExpress.Data.v14.2.dll</HintPath>
+      <Aliases>ded142</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\DevExpress.Utils.v14.2.dll</HintPath>
+      <Aliases>deu142</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraEditors.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\DevExpress.XtraEditors.v14.2.dll</HintPath>
+      <Aliases>dexe142</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.GeoDataBase">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.GeoDataBase.dll</HintPath>
+      <Aliases>agcomsdmgdb</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Server">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.Server.dll</HintPath>
+      <Aliases>esriagissr</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.ORM">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.ORM.dll</HintPath>
+      <Aliases>agcomsdmorm</Aliases>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Catalog">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.COM.SDM.Catalog.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Ftp">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.Ftp.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.StyleManager">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.COM.SDM.StyleManager.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.Workflow">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.COM.SDM.Workflow.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.Pipe.BSModel">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.Pipe.BSModel.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.Pipe.Extension">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.Pipe.Extension.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.Pipe.FieldManager">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.Pipe.FieldManager.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.Pipe.Model">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.Pipe.Model.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.Pipe.Update.DataUpdate">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.Pipe.Update.DataUpdate.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.Pipe.Utility">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.Pipe.Utility.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.3DAnalyst.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalystUI">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.3DAnalystUI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.AxControls.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Display.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DisplayUI">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.DisplayUI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Framework">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Framework.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Geometry.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessing">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Geoprocessing.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.GlobeCore.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Output.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Version">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Version.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.CSharp">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\Microsoft.CSharp.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="stdole">
+      <HintPath>D:\AppAll\VS2019\IDE\Common7\IDE\PublicAssemblies\stdole.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Core">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.DataSetExtensions.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Deployment.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Net.Http">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Net.Http.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Xml.Linq.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GISClient">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.GISClient.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Connection.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.ADF.Connection.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.ADF.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesOleDB">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.DataSourcesOleDB.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="FontListView">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\FontListView.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\log4net.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DataCheck.Kernal">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DataCheck.Kernal.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DataCheck.Express">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DataCheck.Express.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Table2Spatial">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Table2Spatial.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraNavBar.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraNavBar.v14.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.DAO">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Interop.DAO.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Interop.ADOX">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Interop.ADOX.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="UtilityLibrary">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\UtilityLibrary.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NHibernate">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\NHibernate.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.UI">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraCharts.v14.2.UI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraCharts.v14.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Spire.XLS">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Spire.XLS.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Aspose.Cells">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Aspose.Cells.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Microsoft.Office.Interop.Word.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.CADManager">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.COM.SDM.CADManager.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\NPOI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseDistributed">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.GeoDatabaseDistributed.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.OracleClient">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.OracleClient.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Charts.v14.2.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.Charts.v14.2.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ChnCharInfo">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ChnCharInfo.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\NPOI.OOXML.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Management">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Management.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Aspose.Words">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Aspose.Words.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.BaseCommon">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\AG.COM.SDM.BaseCommon.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ICSharpCode.SharpZipLib.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Newtonsoft.Json.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Npgsql">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Npgsql.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraTreeList.v14.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization.Formatters.Soap">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Serialization.Formatters.Soap.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Configuration">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Configuration.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.ServiceModel">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.ServiceModel.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\WindowsBase.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.Entity">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.Entity.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.ComponentModel.DataAnnotations.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.Services.Client">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.Services.Client.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationCore.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\PresentationFramework.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Transactions">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Transactions.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Data.Linq">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Data.Linq.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Serialization.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Printing.v14.2.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\DevExpress.Printing.v14.2.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Runtime.Remoting">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Runtime.Remoting.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="UIAutomationClient">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\UIAutomationClient.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Sparkline.v14.2.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\DevExpress.Sparkline.v14.2.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Animation">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Animation.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.DataSourcesRaster.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Catalog">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.Catalog.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Web">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Web.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.DirectoryServices">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.DirectoryServices.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoDatabaseExtensions">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.GeoDatabaseExtensions.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.NetworkAnalyst">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.NetworkAnalyst.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesNetCDF">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.DataSourcesNetCDF.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GeoAnalyst">
+      <HintPath>D:\Program Files (x86)\ArcGIS\DeveloperKit10.7\DotNet\ESRI.ArcGIS.GeoAnalyst.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="XPTable">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\XPTable.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geoprocessor">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.Geoprocessor.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AnalysisTools">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.AnalysisTools.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DataCheck.PublicHelper">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DataCheck.PublicHelper.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DataCheck.Civicism">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DataCheck.Civicism.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Design">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Design.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Iesi.Collections">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Iesi.Collections.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraCharts.v14.2.Wizard">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraCharts.v14.2.Wizard.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraPrinting.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraPrinting.v14.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Spire.License">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Spire.License.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Security">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Security.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="office">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\office.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Microsoft.Vbe.Interop.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop.Common">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Autodesk.AutoCAD.Interop.Common.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Autodesk.AutoCAD.Interop">
+      <HintPath>C:\WINDOWS\assembly\GAC_MSIL\Autodesk.AutoCAD.Interop\17.1.51.0__eed84259d7cbf30b\Autodesk.AutoCAD.Interop.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\NPOI.OpenXmlFormats.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\NPOI.OpenXml4Net.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="AG.COM.SDM.ProjectManage">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\AG.COM.SDM.ProjectManage.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Numerics">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Numerics.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Mono.Security">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\Mono.Security.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="System.Printing">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5\System.Printing.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataManagementTools">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\ESRI.ArcGIS.DataManagementTools.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2.UI">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.Utils.v14.2.UI.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.RichEdit.v14.2.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.RichEdit.v14.2.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Maplex">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Dll\ESRI.ArcGIS.Maplex.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraRichEdit.v14.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.XtraVerticalGrid.v14.2">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.XtraVerticalGrid.v14.2.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="DevExpress.Office.v14.2.Core">
+      <HintPath>F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\Debug\Bin\DevExpress.Office.v14.2.Core.dll</HintPath>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+    </Reference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

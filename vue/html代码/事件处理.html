@@ -7,6 +7,20 @@
     <title>事件处理01</title>
     <script type="text/javascript" src="../js/vue.js"></script>
 
+    <style>
+        *{
+            margin-top: 20px;
+
+        }
+        .demo1
+        {
+            height: 50px;
+            background-color: skyblue;
+        }
+
+
+    </style>
+
 </head>
 <body>
     <div id="root">
@@ -14,7 +28,16 @@
         <!--<button v-on:click="showInfo">点我提示信息</button>-->
         <button @click="showInfo0">点我提示信息0</button>
         <button @click="showInfo1($event,77)">点我提示信息1</button>
+        <a href="http://www.atguigu.com" @click.prevent="showInfo">点我跳转无效</a>
+
+        <div class="demo1" @click="showInfo">
+            <button @click.stop="showInfo">点我两次提示</button>
+    
+    
+        </div>
+
     </div>
+
 </body>
 <script>
     Vue.config.productionTip=false;
@@ -24,10 +47,10 @@
         data:
         {
             name:'尚硅谷',
-            showInfo1(event,number)
-            {
-                console.log(event,number) 
-            }
+            // showInfo1(event,number)
+            // {
+            //     console.log(event,number) 
+            // }
         },
         methods:
         {
@@ -36,10 +59,11 @@
                 console.log(event.target.innerText)
                 console.log(this)
             },
-            // showInfo1(event,number)
-            // {
-            //     console.log(event,number) 
-            // }
+            showInfo()
+            {
+                //e.stopPropagation()//阻止冒泡
+                alert('同学你好')
+            }
         }
         
     })

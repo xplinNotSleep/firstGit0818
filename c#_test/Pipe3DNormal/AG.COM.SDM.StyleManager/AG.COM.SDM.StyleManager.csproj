@@ -1,0 +1,770 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{AC814C26-654D-4821-98B4-B2EB99095CD9}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AG.COM.SDM.StyleManager</RootNamespace>
+    <AssemblyName>AG.COM.SDM.StyleManager</AssemblyName>
+    <StartupObject>
+    </StartupObject>
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\Debug\Bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>.\bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="AG.COM.SDM.Utility">
+      <HintPath>..\Debug\Bin\AG.COM.SDM.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Utils.v14.2, Version=14.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\DevExpress.Utils.v14.2.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.3DAnalyst, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.3DAnalyst.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.ADF, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.ADF.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.AxControls, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.AxControls.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Carto, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.Carto.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Controls, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesFile, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.DataSourcesFile.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesGDB, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.DataSourcesGDB.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DataSourcesRaster, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.DataSourcesRaster.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Display, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.Display.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.DisplayUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.DisplayUI.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geodatabase, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.Geodatabase.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Geometry, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.Geometry.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GISClient, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.GISClient.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.GlobeCore, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.GlobeCore.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.Output, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.Output.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.System, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.System.dll</HintPath>
+    </Reference>
+    <Reference Include="ESRI.ArcGIS.SystemUI, Version=10.8.0.0, Culture=neutral, PublicKeyToken=8fc3cc631e44ad86, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\DeveloperKit10.8\ESRI.ArcGIS.SystemUI.dll</HintPath>
+    </Reference>
+    <Reference Include="FontListView">
+      <HintPath>..\Dll\FontListView.dll</HintPath>
+    </Reference>
+    <Reference Include="stdole, Version=7.0.3300.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>False</EmbedInteropTypes>
+      <HintPath>..\Dll\stdole.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ConstVariant.cs" />
+    <Compile Include="Definitions.cs" />
+    <Compile Include="Renderer\BarChartRendererControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderer\BarChartRendererControl.Designer.cs">
+      <DependentUpon>BarChartRendererControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\DotDensityRendererControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderer\DotDensityRendererControl.Designer.cs">
+      <DependentUpon>DotDensityRendererControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\FormRotationSet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderer\FormRotationSet.Designer.cs">
+      <DependentUpon>FormRotationSet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\frmDotDensityRendererExclusion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderer\frmDotDensityRendererExclusion.Designer.cs">
+      <DependentUpon>frmDotDensityRendererExclusion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\frmAddRenderValue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderer\frmAddRenderValue.Designer.cs">
+      <DependentUpon>frmAddRenderValue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\frmGraduatedBreak.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderer\frmGraduatedBreak.Designer.cs">
+      <DependentUpon>frmGraduatedBreak.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\frmGraduatedLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Renderer\frmGraduatedLabel.Designer.cs">
+      <DependentUpon>frmGraduatedLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\GraduatedColorRendererControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderer\GraduatedColorRendererControl.Designer.cs">
+      <DependentUpon>GraduatedColorRendererControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\PieChartRendererControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderer\PieChartRendererControl.Designer.cs">
+      <DependentUpon>PieChartRendererControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Renderer\SimpleRendererControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Renderer\SimpleRendererControl.Designer.cs">
+      <DependentUpon>SimpleRendererControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\CtrlSymbolLayers.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\CtrlSymbolLayers.Designer.cs">
+      <DependentUpon>CtrlSymbolLayers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\CtrlSymbolPreview.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\CtrlSymbolPreview.Designer.cs">
+      <DependentUpon>CtrlSymbolPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\CtrlSymbolProperty.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\CtrlSymbolProperty.Designer.cs">
+      <DependentUpon>CtrlSymbolProperty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\FormSetNameAndCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\FormSetNameAndCategory.Designer.cs">
+      <DependentUpon>FormSetNameAndCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\FormStyleManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\FormStyleManager.Designer.cs">
+      <DependentUpon>FormStyleManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\FormSymbolPropertyEdit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\FormSymbolPropertyEdit.Designer.cs">
+      <DependentUpon>FormSymbolPropertyEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\Ctrl3DMarker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\Ctrl3DMarker.Designer.cs">
+      <DependentUpon>Ctrl3DMarker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlAdvancedText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlAdvancedText.Designer.cs">
+      <DependentUpon>CtrlAdvancedText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlArrowMarker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlArrowMarker.Designer.cs">
+      <DependentUpon>CtrlArrowMarker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlBalloonCallout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlBalloonCallout.Designer.cs">
+      <DependentUpon>CtrlBalloonCallout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlCartographicLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlCartographicLine.Designer.cs">
+      <DependentUpon>CtrlCartographicLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlCharacterMarker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlCharacterMarker.Designer.cs">
+      <DependentUpon>CtrlCharacterMarker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlComboBoxFont.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlComboBoxFont.designer.cs">
+      <DependentUpon>CtrlComboBoxFont.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlFillProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlFillProperties.Designer.cs">
+      <DependentUpon>CtrlFillProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlFormattedText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlFormattedText.Designer.cs">
+      <DependentUpon>CtrlFormattedText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlGeneralText.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlGeneralText.Designer.cs">
+      <DependentUpon>CtrlGeneralText.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlGradientFill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlGradientFill.Designer.cs">
+      <DependentUpon>CtrlGradientFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlHashLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlHashLine.Designer.cs">
+      <DependentUpon>CtrlHashLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlLineCallout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlLineCallout.Designer.cs">
+      <DependentUpon>CtrlLineCallout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlLineFill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlLineFill.Designer.cs">
+      <DependentUpon>CtrlLineFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlLineProperties.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlLineProperties.Designer.cs">
+      <DependentUpon>CtrlLineProperties.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerFill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerFill.Designer.cs">
+      <DependentUpon>CtrlMarkerFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerLine.Designer.cs">
+      <DependentUpon>CtrlMarkerLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerTextBackground.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerTextBackground.Designer.cs">
+      <DependentUpon>CtrlMarkerTextBackground.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMask.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlMask.Designer.cs">
+      <DependentUpon>CtrlMask.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlPicture.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlPicture.Designer.cs">
+      <DependentUpon>CtrlPicture.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlPropertyBase.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleFill.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleFill.Designer.cs">
+      <DependentUpon>CtrlSimpleFill.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLine.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLine.Designer.cs">
+      <DependentUpon>CtrlSimpleLine.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLineCallout.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLineCallout.Designer.cs">
+      <DependentUpon>CtrlSimpleLineCallout.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLineDecoration.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLineDecoration.Designer.cs">
+      <DependentUpon>CtrlSimpleLineDecoration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleMarker.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleMarker.Designer.cs">
+      <DependentUpon>CtrlSimpleMarker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlTemplate.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\CtrlTemplate.Designer.cs">
+      <DependentUpon>CtrlTemplate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\ICtrlSymbolProperty.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\PropertyCtrl\PictureBoxTemplateLine.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\StyleCommon.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="StylePropertyEdit\StyleInterface.cs" />
+    <Compile Include="StylePropertyEdit\StyleSymbolType.cs" />
+    <Compile Include="StylePropertyEdit\SymbolPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Symbol\frmTextScaleBarSymbol.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Symbol\frmTextScaleBarSymbol.designer.cs">
+      <DependentUpon>frmTextScaleBarSymbol.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Symbol\frmSymbolSelector.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Symbol\frmSymbolSelector.Designer.cs">
+      <DependentUpon>frmSymbolSelector.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Symbol\StyleGalleryItemView.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="frmScaleBarProperties.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmScaleBarProperties.Designer.cs">
+      <DependentUpon>frmScaleBarProperties.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderer\GraduatedColorRendererControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>GraduatedColorRendererControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\SimpleRendererControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>SimpleRendererControl.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Bar Column.jpg" />
+    <EmbeddedResource Include="Images\Categories.jpg" />
+    <EmbeddedResource Include="Images\Dot density.jpg" />
+    <EmbeddedResource Include="Images\Graduated colors.jpg" />
+    <EmbeddedResource Include="Images\Graduated symbols.jpg" />
+    <EmbeddedResource Include="Images\Pie.jpg" />
+    <EmbeddedResource Include="Images\Proportional synbols.jpg" />
+    <EmbeddedResource Include="Images\Quantity by category.jpg" />
+    <EmbeddedResource Include="Images\Single symbol.jpg" />
+    <EmbeddedResource Include="Images\Stacked.jpg" />
+    <EmbeddedResource Include="Renderer\BarChartRendererControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>BarChartRendererControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\DotDensityRendererControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>DotDensityRendererControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\frmAddRenderValue.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmAddRenderValue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\frmDotDensityRendererExclusion.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmDotDensityRendererExclusion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\frmGraduatedBreak.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGraduatedBreak.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\frmGraduatedLabel.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>frmGraduatedLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Renderer\PieChartRendererControl.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>PieChartRendererControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\Ctrl3DMarker.resx">
+      <DependentUpon>Ctrl3DMarker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbol\frmSymbolSelector.resx">
+      <DependentUpon>frmSymbolSelector.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\ShpToSde.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cursor\area.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\Area.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\CADtoShp.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\distance.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Cursor\distance.cur" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\serverstyle.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\SymbolSelector.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\Symbology.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\file16.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\file32.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\NotrhArrow.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\ScaleBar.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\Buffer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\ClearBuffer.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\SpatialQuery.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Images\SetLayersSelectable.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Renderer\FormRotationSet.resx">
+      <DependentUpon>FormRotationSet.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Bitmap\SetDataSource.bmp" />
+    <EmbeddedResource Include="StylePropertyEdit\CtrlSymbolLayers.resx">
+      <DependentUpon>CtrlSymbolLayers.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\CtrlSymbolPreview.resx">
+      <DependentUpon>CtrlSymbolPreview.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\CtrlSymbolProperty.resx">
+      <DependentUpon>CtrlSymbolProperty.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\FormSetNameAndCategory.resx">
+      <DependentUpon>FormSetNameAndCategory.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\FormStyleManager.resx">
+      <DependentUpon>FormStyleManager.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\FormSymbolPropertyEdit.resx">
+      <DependentUpon>FormSymbolPropertyEdit.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlAdvancedText.resx">
+      <DependentUpon>CtrlAdvancedText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlArrowMarker.resx">
+      <DependentUpon>CtrlArrowMarker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlBalloonCallout.resx">
+      <DependentUpon>CtrlBalloonCallout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlCartographicLine.resx">
+      <DependentUpon>CtrlCartographicLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlCharacterMarker.resx">
+      <DependentUpon>CtrlCharacterMarker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlComboBoxFont.resx">
+      <DependentUpon>CtrlComboBoxFont.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlFillProperties.resx">
+      <DependentUpon>CtrlFillProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlFormattedText.resx">
+      <DependentUpon>CtrlFormattedText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlGeneralText.resx">
+      <DependentUpon>CtrlGeneralText.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlGradientFill.resx">
+      <DependentUpon>CtrlGradientFill.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlHashLine.resx">
+      <DependentUpon>CtrlHashLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlLineCallout.resx">
+      <DependentUpon>CtrlLineCallout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlLineFill.resx">
+      <DependentUpon>CtrlLineFill.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlLineProperties.resx">
+      <DependentUpon>CtrlLineProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerFill.resx">
+      <DependentUpon>CtrlMarkerFill.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerLine.resx">
+      <DependentUpon>CtrlMarkerLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlMarkerTextBackground.resx">
+      <DependentUpon>CtrlMarkerTextBackground.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlMask.resx">
+      <DependentUpon>CtrlMask.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlPicture.resx">
+      <DependentUpon>CtrlPicture.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleFill.resx">
+      <DependentUpon>CtrlSimpleFill.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLine.resx">
+      <DependentUpon>CtrlSimpleLine.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLineCallout.resx">
+      <DependentUpon>CtrlSimpleLineCallout.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleLineDecoration.resx">
+      <DependentUpon>CtrlSimpleLineDecoration.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlSimpleMarker.resx">
+      <DependentUpon>CtrlSimpleMarker.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StylePropertyEdit\PropertyCtrl\CtrlTemplate.resx">
+      <DependentUpon>CtrlTemplate.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Symbol\frmTextScaleBarSymbol.resx">
+      <DependentUpon>frmTextScaleBarSymbol.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmScaleBarProperties.resx">
+      <DependentUpon>frmScaleBarProperties.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Bitmap\E5.ico" />
+    <EmbeddedResource Include="Resources\Bitmap\E5_32.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
