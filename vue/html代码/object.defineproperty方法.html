@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>初识object.defineProperty方法</title>
+</head>
+<body>
+    <script>
+        let number=18;
+        let person0=
+        {
+            name:"张三",
+            sex:"男",
+            age:number
+        }
+
+        Object.defineProperty(person0,"age",
+        {
+            // value:18,
+            // enumerable:true,
+            // writable:true,
+            // configurable:true
+            get:function()
+            {
+                console.log('ha')
+                return number
+            },
+            set(value)
+            {
+                console.log('有人修改了age属性，且值是',value)
+                number=value;
+            }
+        });
+
+        // for(var key in person0)
+        // {
+        //     console.log("@",person0[key])
+        // }
+        //console.log(Object.keys(person0))
+        console.log(person0)
+    </script>
+
+
+</body>
+</html>

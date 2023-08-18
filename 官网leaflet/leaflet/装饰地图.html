@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>装饰地图</title>
+		<link rel="stylesheet" href="leaflet/leaflet.css" >
+		<script src='https://unpkg.com/wicg-inert@latest/dist/inert.min.js'></script>
+		<script src="leaflet/leaflet.js"></script>	 
+		<style>
+			#decorative-map
+			{
+				height:300px;
+			}
+			
+			
+		</style>
+		
+	</head>
+	<body>
+		<div id='decorative-map' inert></div>
+		<script>
+			var map = L.map('decorative-map').setView([51.505, -0.09], 13);
+			
+			
+		</script>
+		
+	</body>
+</html>

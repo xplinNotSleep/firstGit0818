@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<base target="_top">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	<title>Choropleth Tutorial - Leaflet</title>
+	
+	<link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+
+	<script type="text/javascript" src="https://leafletjs.cn/examples/choropleth/us-states.js">
+    	</script>
+
+	<style>
+		html, body {
+			height: 100%;
+			margin: 0;
+		}
+		/*地图容器尺寸样式*/
+		.leaflet-container {
+			height: 500px;
+			width: 800px;
+			margin:0 auto;
+			max-width: 100%;
+			max-height: 100%;
+		}
+		/*统计信息窗尺寸样式*/
+		.perInfo
+		{
+			padding: 6px 8px;
+			font: 14px/16px Arial, Helvetica, sans-serif;
+			background: white;
+			background: rgba(255,255,255,0.8);
+			box-shadow: 0 0 15px rgba(0,0,0,0.2);
+			border-radius: 5px;
+		}
+		.perInfo h4
+		{
+			margin:0 0 5px;
+			color:#777;
+		}
+		
+		/*图例样式 */
+		.legend {
+			height:150px;
+			width:85px;
+		    line-height: 18px;
+		    color: #555;
+			background-color: white;
+		}
+		.legend i {
+		    width: 18px;
+		    height: 18px;
+		    float: left;
+		    /*margin-right: 8px;*/
+		    opacity: 0.7;
+			margin-left:5px;
+		}
+
+	</style>
+
+	
+</head>
+<body>
+
+	<div id='map'></div>
+	<div class='perInfo'></div>
+
+	<script type="text/javascript">
+
+        /*初始化地图容器*/
+		const map = L.map('map').setView([37.8, -96], 4);
+
+		/*设置分级颜色*/
+		function getColor(d) {
+			return d > 1000 ? '#800026' :
+				d > 500  ? '#BD0026' :
+				d > 200  ? '#E31A1C' :
+				d > 100  ? '#FC4E2A' :
+				d > 50   ? '#FD8D3C' :
+				d > 20   ? '#FEB24C' :
+				d > 10   ? '#FED976' : '#FFEDA0';
+		}
+
+        /*样式设置*/
+		function styleSet(feature) {
+			return {
+				weight: 2,
+				opacity: 1,
+				color: 'white',
+				dashArray: '2',
+				fillOpacity: 0.8,
+				fillColor: getColor(feature.properties.density)
+			};
+		}
+
+		/*在地图容器中根据geojson信息创建待统计图层并进行符号化
+		const geojson = L.geoJson(statesData, {
+			style:styleSet
+		}).addTo(map);*/
+		
+		/*鼠标悬停在图层上方的事件,设置高亮显示样式*/
+		function highlightFeature(e) {
+		    var layer = e.target;
+		
+		    layer.setStyle({
+		        weight: 5,
+		        color: '#666',
+		        dashArray: '',
+		        fillOpacity: 0.7
+		    });
+		
+		    layer.bringToFront();
+			perInfo.update(layer.feature.properties);
+		}
+		
+		/*鼠标指针离开图层时发生的事件,重新回复原来符号化的样式*/
+	    function resetHightlight(e)
+		{
+			geojson.resetStyle(e.target);
+			
+			perInfo.update();
+		}
+		
+		/*鼠标点击图层某一处发生的事件,视图自动定位到点击处*/
+		function zoomToFeature(e)
+		{
+			map.fitBounds(e.target.getBounds());
+			
+		}
+		
+		/*设置图层中每个几何体的鼠标事件*/
+		function onFeature(feature,layer)
+		{
+			layer.on
+			({
+				mouseover:highlightFeature,
+				mouseout:resetHightlight,
+				click:zoomToFeature
+			});
+			
+		}
+		
+		/*增加显示图层统计信息的控件*/
+		var perInfo=L.control();
+		
+		/*将定义的控件对象添加到地图容器中*/
+		perInfo.onAdd=function(map)
+		{
+			this._div=L.DomUtil.create('div','perInfo');
+			this.update();
+			return this._div;
+		};
+		
+		/*初始化控件显示信息*/
+		perInfo.update=function(props)
+		{
+			this._div.innerHTML='<h4>美国各州人口密度</h4>'+(props?
+			'<b>' + props.name + '</b><br />' + props.density + ' 人 / 米<sup>2</sup>'
+			        : '将鼠标悬停到某个州上方查看统计信息');
+		};
+		
+		perInfo.addTo(map);
+		
+		/*将图层加载到地图容器中并初始化图层样式和鼠标事件*/
+		geojson=L.geoJson(statesData,
+		{
+			style:styleSet,
+			onEachFeature:onFeature
+		}).addTo(map);
+		
+		/*创建图例控件*/
+		var legend=L.control({position:'bottomright'});
+		
+		/*初始化图例控件显示信息*/
+		legend.onAdd=function(map)
+		{
+			var div=L.DomUtil.create('div','legend'),
+			grades=[0,10,20,50,100,200,500,1000],
+			labels=[];
+			
+			for(var i=0;i<grades.length;i++)
+			{
+				div.innerHTML+=
+				'<i style="background:' + getColor(grades[i] + 1) + '"></i>'+
+				'&nbsp&nbsp;'+grades[i]+(grades[i+1]?'&ndash;'+grades[i+1]+'<br>':'+');
+			}
+			
+			return div;
+		};
+		legend.addTo(map);
+
+	</script>
+
+
+
+</body>
+</html>

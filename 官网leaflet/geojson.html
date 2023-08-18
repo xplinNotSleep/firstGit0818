@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>geojson0</title>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" >
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+		<style>
+			#map0
+			{
+				height:500px;
+				width:80%;
+				margin:40px auto;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="map0"></div>
+		<script src="leaflet/geojson0.js"></script>
+		
+		<script>
+			var map = L.map('map0').setView([39.75, -105], 13);
+			
+			/* 定义的方法 :添加要素标注信息*/
+			function onEachFeature(feature, layer) {
+				var popupContent='json 加入 leaflet vector!';
+			    if (feature.properties && feature.properties.popupContent) {
+			        popupContent+=feature.properties.popupContent;
+			    }
+				layer.bindPopup(popupContent);
+			}
+
+			/*geoJson第一种方法的调用,点geojson对象添加到地图中*/
+			L.geoJSON(geojsonFeature0).addTo(map);
+
+			/*geoJson第二种方法*/
+			var myLayer=L.geoJSON().addTo(map);
+			myLayer.addData(geojsonFeature1);
+			
+			/*设置点要素符号化属性*/
+			var geojsonMarkerOptions = {
+			    radius: 13,   //点要素半径
+			    fillColor: "#ff7800",    //内部填充颜色
+			    color: "#000",    //轮廓颜色
+			    weight: 1,    //轮廓宽度
+			    opacity: 0.5,    //轮廓透明度
+			    fillOpacity: 0.7    //内部透明度
+			};
+			
+			/*geoJson方法调用，将点要素进行符号化*/
+			const pointLayer1=L.geoJSON(geojsonFeature2,
+			{
+				onEachFeature,
+				pointToLayer(feature, latlng) 
+				{
+					return L.circleMarker
+					(latlng, 
+					geojsonMarkerOptions);
+				}
+			}).addTo(map);
+
+            /*geojson转换多边形要素 */
+			const polygonLayer1=L.geoJSON(geojsonPolygon1,{onEachFeature}).addTo(map);
+			
+			/*转换点集要素*/
+			const ptColLayer1=L.geoJSON(geojsonPtCol1,
+			{
+				onEachFeature,
+				pointToLayer(feature, latlng)
+				{
+					return L.circleMarker
+					(latlng, geojsonMarkerOptions);
+				}
+			}).addTo(map);
+			
+			/*定义符号化参数*/
+			var myStyle=
+			{
+				"color":"#ff7800",
+				"weight":5,
+				"opacity":0.65
+			};
+			
+			L.geoJSON(geojsonPoline1,
+			{
+				onEachFeature,
+				style:myStyle
+			}).addTo(map);
+		
+
+		</script>
+	</body>
+</html>
