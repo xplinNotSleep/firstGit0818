@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性-姓名案例</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        姓:<input type="text" v-model="firName"><br/>
+        名:<input type="text" v-model="lastName"><br/>
+        测试:<input type="text" v-model="x"><br/>
+        姓名:<span>{{fullName}}</span>
+    </div>
+    
+</body>
+<script>
+    Vue.config.productionTip=false;
+    const vm=new Vue(
+    {
+        el:'#root',
+        data:
+        {
+            firName:'张',
+            lastName:'三',
+            x:"你好世界"
+        },
+        //普通的方法调用无法节省空间，每次都需要调用其中的方法
+        // methods:
+        // {
+        //     fullName()
+        //     {
+        //         return this.firName+'-'+this.lastName;
+        //     }
+        // }
+        //计算属性(不必进行每次调用，只有当初次执行时或者是内部所依赖的变量发生改变时方可执行)
+        computed:
+        {
+            // fullName:
+            // {
+            //     get()
+            //     {
+            //         console.log('get被调用');
+            //         return this.firName+'-'+this.lastName;
+            //     },
+            //     set(value)
+            //     {
+            //         console.log('set',value);
+            //         var arr= value.split('-');
+            //         this.firName=arr[0];
+            //         this.lastName=arr[1];
+            //     }
+                
+            // }
+            fullName()
+            {
+                console.log('get被调用');
+                return this.firName+'-'+this.lastName;
+            
+            }
+        }
+        
+        
+    })
+
+    console.log(vm)
+
+</script>
+</html>
