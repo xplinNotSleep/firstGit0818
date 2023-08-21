@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>条件渲染</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>请选择你的前端框架:</h2>
+        <button @click="n++">点我随机选择</button>
+        <br/>
+        <!--v-if和v-else-if,中间不可被div打断-->
+        <div v-if="n==1">Angular</div>
+        <div v-else-if="n==2">React</div>
+        <div v-else-if="n==3">Vue</div>
+        <div v-else-if="n>3">暂时没有了哦</div>
+
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+
+    const vm = new Vue({
+        el:'#root',
+        data:
+        {
+            n:0
+        }
+    })
+    console.log(vm)
+
+</script>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>深度监视</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        <h2>空调运作模式:{{info}}</h2>
+        <button @click="changeMethod">切换模式</button>
+        <hr/>
+        <h3>温度:{{numbers.a}}</h3>
+        <button @click="numbers.a++">升温</button>
+        <h3>湿度:{{numbers.b}}%</h3>
+        <button @click="numbers.b++">加湿</button>
+        <!--<button @click="numbers={a:11,b:11}">恢复默认值</button>-->
+
+        {{numbers.c.d}}
+    </div>
+    
+</body>
+<script>
+    Vue.config.productionTip=false;
+
+    var vm=new Vue({
+        el:'#root',
+        data:
+        {
+            isHot:true,
+            numbers:
+            {
+                a:1,
+                b:1,
+                c:{
+                    d:100
+                }
+            }
+        },
+        //计算属性
+        computed:{
+            info()
+            {
+                return this.isHot?'制热':'制冷'
+            }
+        },
+        //方法
+        methods: {
+          changeMethod()
+          {
+              this.isHot=!this.isHot
+          }  
+        },
+        //监视属性(方式一)
+        watch:
+        {
+            //正常写法
+            // info:
+            // {
+            //     immediate:true,
+            //     handler(newValue,oldValue)
+            //     {
+            //         console.log('info被修改',newValue,oldValue)
+            //     }
+
+            // },
+            //简写
+            info(newValue,oldValue)
+            {
+                console.log('info被修改了',newValue,oldValue)
+            },
+
+            numbers:{
+                deep:true,
+                handler()
+                {
+                    console.log('numbers改变了')
+                }
+            }
+
+        }
+    })
+
+
+
+</script>
+</html>

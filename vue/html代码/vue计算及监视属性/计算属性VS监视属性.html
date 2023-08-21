@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>计算属性-姓名案例</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        姓:<input type="text" v-model="firName"><br/>
+        名:<input type="text" v-model="lastName"><br/>
+        姓名:<span>{{fullName}}</span> <br/>
+    </div>
+    
+</body>
+<script>
+    Vue.config.productionTip=false;
+    const vm=new Vue(
+    {
+        el:'#root',
+        data:
+        {
+            firName:'张',
+            lastName:'三',
+            fullName:'张-三'
+        },
+        //代码实现简单，但是无法用于异步操作中，必须带有返回值
+        // computed:
+        // {
+        //     fullName()
+        //     {
+        //         console.log('get被调用');
+
+        //         setTimeout(()=>
+        //         {
+        //             return this.firName+this.lastName
+        //         },1000)
+        //     }
+        // },
+
+        watch:
+        {
+            firName(newValue)
+            {
+                setTimeout(()=>{
+                    console.log(this)
+                    this.fullName=newValue+"-"+this.lastName
+                },1000);
+                // setTimeout(function()
+                // {
+                //     this.fullName=newValue+"-"+this.lastName
+                // },1000);
+            },
+            lastName(newValue)
+            {
+                this.fullName=this.firName+"-"+newValue
+            }
+        }
+        
+        
+    })
+
+    console.log(vm)
+
+</script>
+</html>

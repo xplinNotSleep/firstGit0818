@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>监视属性-天气案例</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+
+</head>
+<body>
+    <div id="root">
+        <h2>空调运作模式:{{info}}</h2>
+        <button @click="changeMethod">切换模式</button>
+
+    </div>
+    
+</body>
+<script>
+    Vue.config.productionTip=false;
+
+    var vm=new Vue({
+        el:'#root',
+        data:
+        {
+            isHot:true
+        },
+        //计算属性
+        computed:{
+            info()
+            {
+                return this.isHot?'制热':'制冷'
+            }
+        },
+        //方法
+        methods: {
+          changeMethod()
+          {
+              this.isHot=!this.isHot
+          }  
+        },
+        //监视属性(方式一)
+        // watch:
+        // {
+        //     isHot:
+        //     {
+        //         immediate:true,
+        //         handler(newValue,oldValue)
+        //         {
+        //             console.log('isHot被修改',newValue,oldValue)
+        //         }
+
+        //     }
+        // }
+    })
+    //监视属性方式二:
+    vm.$watch('isHot',{
+        immediate:true,
+        handler(newValue,oldValue)
+        {
+            console.log('isHot被修改',newValue,oldValue)
+        }
+
+
+    })
+
+
+</script>
+</html>
