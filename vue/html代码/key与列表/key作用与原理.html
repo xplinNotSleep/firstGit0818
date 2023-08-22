@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>key作用与原理</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>坐牢名单</h2>
+        <button @click.once="add">添加一个老王到名单中</button>
+        <ul>
+            <!--key唯一标识-->
+            <li v-for="(value,index) of persons" :key="value.id">
+                {{value.name}}--{{value.age}}
+                <input type="text">
+            </li>
+            <br/>
+            <br/>
+            <li v-for="(value,a) of persons" :key="a">
+                {{value.name}}--{{value.age}}
+                <input type="text">
+            </li>
+            
+        </ul>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+
+    const vm = new Vue({
+        el:'#root',
+        data:
+        {
+            persons:[
+                {id:'001',name:"张三",age:18},
+                {id:'002',name:"李四",age:28},
+                {id:'003',name:"王五",age:38}
+            ]
+        },
+        methods: {
+            add()
+            {
+                const p={id:'004',name:"老王",age:108}
+                this.persons.unshift(p)
+            }
+        },
+    })
+    console.log(vm)
+
+</script>
+
+</html>

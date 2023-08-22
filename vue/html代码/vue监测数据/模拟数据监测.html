@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模拟数据监测</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h1>学校名称:</h1>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+    
+    let data={
+        name:'jj',
+        address:'北京'
+    }
+
+    const obs=new Observer(data)
+    console.log(obs)
+
+    let vm = {}
+    vm._data=obs
+
+    function Observer(obj)
+    {
+        //汇总对象中所有属性形成一个数组
+        const keys=Object.keys(obj)
+        //遍历
+        keys.forEach((k)=>{
+            Object.defineProperty(this,k,
+            {
+                get()
+                {
+                    return obj[k]
+                },
+                set(val)
+                {
+                    console.log('变量已改')
+                    obj[k]=val
+                }
+            })
+
+        })
+        
+    }
+
+</script>
+
+</html>

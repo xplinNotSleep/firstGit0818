@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>vue监测原理之VueSet</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>囚犯姓名:{{std.name}}</h2>
+        <h2 v-show="std.sex">囚犯性别:{{std.sex}}</h2>
+        <h2>囚犯年龄:{{std.age}}</h2>
+        <!--<h2 v-show="des">描述:{{des}}</h2>-->
+        <button @click="addSex">添加性别</button>
+        <!--<button @click="addDes">添加描述</button>-->
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+
+    const vm=new Vue({
+        el:'#root',
+        //写进data里面的属性方可读写
+        data:
+        {
+            std:
+            {
+                name:"JJ",
+                age:20,
+
+            }
+
+        },
+        methods: {
+            addSex()
+            {
+                //Vue.set(this.std,'sex','男')
+                this.$set(this.std,'sex','男')
+            
+            },
+            // addDes()
+            // {
+            //     //Vue.set(this.std,'sex','男')
+            //     this.$set(this,'des','充满晦气')
+            // }
+
+        },
+        
+    })
+
+    console.log(vm)
+    
+    
+
+</script>
+
+</html>

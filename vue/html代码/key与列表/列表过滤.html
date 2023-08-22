@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>列表过滤</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>今日坐牢名单</h2>
+        <input type="text" placeholder="输入名字" v-model="keyWord">
+        <ul>
+            <!--key唯一标识-->
+            <li v-for="value in filPersons" :key="value.id">
+                {{value.name}}-{{value.sex}}--{{value.age}}
+            </li>
+        </ul>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+
+    new Vue({
+        el:'#root',
+        data:
+        {
+            keyWord:'',
+            persons:[
+                {id:'001',name:"张振中",sex:'男',age:1000},
+                {id:'002',name:"张三贵",sex:'女',age:1500},
+                {id:'003',name:"李富贵",sex:'女',age:2000},
+                {id:'004',name:"王富聪",sex:'男',age:2500}
+            ],
+            filPersons:[]
+        },
+        //用computed也可以
+        watch:
+        {
+            keyWord:
+            {
+                immediate:true,//加载的时候默认先执行一次handler中的语句
+                handler(val)
+                {
+                    //列表过滤
+                    this.filPersons=this.persons.filter((p)=>{
+                        return p.name.indexOf(val)!= -1
+                    
+                    })
+                
+                }
+            }
+        },
+        method:
+        {
+
+        }
+    })
+    
+
+</script>
+
+</html>
