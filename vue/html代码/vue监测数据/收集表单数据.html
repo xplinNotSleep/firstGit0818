@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>收集表单数据</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <form @submit.prevent="demo">
+            账号:<input type="text" v-model.trim="userInfo.account"><br/><br/>
+            密码:<input type="password" v-model="userInfo.password"><br/><br/>
+            年龄:<input type="number" v-model="userInfo.age"><br/><br/>
+            性别:
+            男<input type="radio" name="sex" v-model="userInfo.sex" value="male"><!--单选框radio需要加个name，用同样的名称命名，才能实现单选效果-->
+            女<input type="radio" name="sex" v-model="userInfo.sex" value="female"><br/><br/>
+            爱好:
+            运动<input type="checkbox" v-model="userInfo.hobby" value="sport">
+            打游戏<input type="checkbox" v-model="userInfo.hobby" value="game">
+            学习<input type="checkbox" v-model="userInfo.hobby" value="study">
+            <br/><br/>
+            所用开发语言:
+            <select v-model="userInfo.city">
+                <option value="">请选择开发语言</option>
+                <option value="java">java</option>
+                <option value="html">html</option>
+                <option value="python">python</option>
+                <option value="C">C</option>
+                <option value="C++">C++</option>
+            </select><!--下拉列表框-->
+            <br/><br/>
+            其他信息:
+            <textarea v-model.lazy="userInfo.other"></textarea>
+            <br/><br/>
+            <input type="checkbox" v-model="userInfo.agree">阅读并接受<a href="http://www.baidu.com">用户协议</a>
+            <button>提交</button>
+
+        </form>
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+    
+    new Vue({
+        el:'#root',
+        data:
+        {
+            userInfo:
+            {
+                account:'',
+                password:'',
+                age:0,
+                sex:'',
+                hobby:[],
+                city:'',
+                other:'',
+                agree:false
+            }
+      
+        },
+        methods: {
+            demo()
+            {
+                alert(1)
+                console.log(JSON.stringify(this.userInfo))
+            }
+        },
+
+    })
+
+</script>
+
+</html>
