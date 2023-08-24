@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非单文件组件-基本使用</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <school></school>
+        <school></school>
+        <hr>
+        <student></student>
+        <student></student>
+    </div>
+
+    <div id="root2">
+        <student></student>
+    </div>
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+
+    //组件写法
+    const school0=Vue.extend({
+        //el:'#root', //组件定义时不要写el配置项，定义后的组件会被new Vue管理
+        template:`
+        <div>
+            <h2>学校名称:{{schoolName}}</h2>
+            <h2>学校地址:{{address}}</h2>
+            <button @click="showName">点我提示学校名</button>
+        </div>
+        `,
+        
+        data()
+        {
+            return {
+                schoolName:'A校',
+                address:'A市'
+            }
+        },
+        methods: {
+            showName()
+            {
+                alert(this.schoolName)
+            }
+        },
+    })
+
+    const student0=Vue.extend({
+        //el:'#root', //组件定义时不要写el配置项，定义后的组件会被new Vue管理
+        template:`
+        <div>
+        <h2>学生姓名:{{studentName}}</h2>
+        <h2>学生年龄:{{age}}</h2>
+        </div>
+        `,
+        
+        data()
+        {
+            return {
+                studentName:'张三',
+                age:19
+            }
+        }
+    }) 
+
+    //调用组件
+    new Vue(
+    {
+        el:'#root',
+        data:
+        {
+
+        },
+        components:
+        {
+            school:school0,
+            student:student0
+        }
+    })
+
+    new Vue(
+        {
+            el:'#root2'
+        }
+    )
+    
+</script>
+
+
+
+</html>
