@@ -11,20 +11,23 @@
     <div id="root">
         <school></school>
         <school></school>
+        <hello></hello>
         <hr>
         <student></student>
         <student></student>
     </div>
-
+    <hr>
     <div id="root2">
         <student></student>
+        <hello></hello>
+        <diannao></diannao>
     </div>
 </body>
 
 <script type="text/javascript">
     Vue.config.productionTip = false
 
-    //组件写法
+    //定义组件写法
     const school0=Vue.extend({
         //el:'#root', //组件定义时不要写el配置项，定义后的组件会被new Vue管理
         template:`
@@ -68,14 +71,51 @@
         }
     }) 
 
-    //调用组件
+    const hello0=Vue.extend({
+        //el:'#root', //组件定义时不要写el配置项，定义后的组件会被new Vue管理
+        template:`
+        <div>
+        <h2>你好呀,{{studentName}}</h2>
+        </div>
+        `,
+        
+        data()
+        {
+            return {
+                studentName:'张三',
+                age:19
+            }
+        }
+    }) 
+
+    //省略extend
+    const computer = {
+        template:`
+        <div>
+        <h2>CPU版本:{{VerCPU}}</h2>
+        <h2>运行内存:{{size}}</h2>
+        </div>
+        `,
+
+        data()
+        {
+            return {
+            
+                VerCPU:'i7',
+                size:16
+            }
+        }
+    }
+
+    //全局方式调用组件
+    Vue.component('hello',hello0);
+
+    Vue.component('diannao',computer)
+
+    //局部方式调用组件
     new Vue(
     {
         el:'#root',
-        data:
-        {
-
-        },
         components:
         {
             school:school0,
@@ -83,11 +123,15 @@
         }
     })
 
-    new Vue(
+    new Vue({
+        
+        el:'#root2',
+        components:
         {
-            el:'#root2'
+            student:student0
         }
-    )
+    })
+    
     
 </script>
 

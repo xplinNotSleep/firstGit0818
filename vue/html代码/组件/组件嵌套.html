@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>非单文件组件-基本使用</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        
+        <!--<chapter></chapter>-->
+        <!--可写在创建的vue实例中-->
+    </div>
+
+</body>
+
+<script type="text/javascript">
+    Vue.config.productionTip = false
+
+
+    const enermy=Vue.extend({
+        name:'enermy0',
+        template:`
+        <div>
+            <h2>敌方数量:{{count}}</h2>
+            <h2>敌方兵种:{{type}}</h2>
+        </div>
+        `,
+        data()
+        {
+            return {
+                count:70,
+                type:"术师"
+            }
+        },
+    })
+
+    const level=Vue.extend({
+        name:'level0',
+        template:`
+        <div>
+            <h2>关卡名称:{{levelName}}</h2>
+            <h2>关卡地点:{{levelPlace}}</h2>
+            <enermy></enermy>
+        </div>
+        `,
+        data()
+        {
+            return {
+                levelName:'0-1',
+                levelPlace:'沙漠0'
+            }
+        },
+        //进行嵌套
+        components:
+        {
+            enermy
+        }
+    })
+
+    const Chapter={
+        template:`
+        <div>
+            <level></level>    
+        </div>
+        `,
+        components:
+        {
+            level
+        }
+    }
+
+
+    //局部方式调用组件
+    new Vue(
+    {
+        template:`
+        <chapter></chapter>
+        `,
+
+        el:'#root',
+        components:
+        {
+            Chapter
+        }
+    })
+    console.log(level)
+    
+    
+</script>
+
+
+
+</html>
