@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>v-指令</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+    <script type="text/javascript" src="../../js/dayjs.min.js"></script>
+</head>
+<body>
+    <div id="root">
+       <h2>v-text下的n值:<span v-text="n"></span></h2>
+       <h2>放大10倍后的n值是:<span v-bind0="n"></span></h2>
+       <button @click="n++">点我n+1</button>
+       <hr/>
+       <input type="text" v-fbind0:value="n">
+    </div>
+    <div id="root0">
+        <input type="text" v-fbind0:value="n">
+
+    </div>
+    
+</body>
+<script type="text/javascript">
+    Vue.config.productTip=false;
+    
+    Vue.directive('fbind0',{
+         //指令与元素成功绑定时
+         bind(element,binding){
+            console.log('bind')
+            element.value=binding.value
+        },
+        //指令所在元素被插入界面时
+        inserted(element,binding){
+            console.log('inserted')
+            element.focus()
+        },
+        //指令所在模板被重新解析时
+        update(element,binding)
+        {
+            console.log('update')
+            element.value=binding.value
+            element.focus()
+        }
+
+    })
+
+    new Vue(
+       {
+           el:'#root',
+           data:
+           {
+               n:1
+           },
+           directives:
+           {
+               bind0(element,binding)
+               {
+                   console.log('bind0')
+                   element.innerText=binding.value*10
+               },
+               //此写法加载时无法立刻获取元素焦点
+            //    fbind0(element,binding)
+            //    {
+            //        element.value=binding.value
+            //        element.focus()
+            //    },
+                //对象式绑定
+                // fbind0:
+                // {
+                //     //指令与元素成功绑定时
+                //     bind(element,binding){
+                //         console.log('bind')
+                //         element.value=binding.value
+                //     },
+                //     inserted(element,binding){
+                //         console.log('inserted')
+                //         element.focus()
+                //     },
+                //     //指令所在模板被重新解析时
+                //     update(element,binding)
+                //     {
+                //         console.log('update')
+                //         element.value=binding.value
+                //         element.focus()
+                //     }
+                // }
+
+           }
+
+       }
+    )
+
+    new Vue({
+        el:'#root0',
+        data:
+        {
+            n:1
+        }
+    })
+    
+
+</script>
+
+</html>

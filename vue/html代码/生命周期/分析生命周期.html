@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>分析生命周期</title>
+    <script type="text/javascript" src="../../js/vue.js"></script>
+</head>
+<body>
+    <div id="root">
+        <h2>当前的n值是:{{n}}</h2>
+        <button @click="add">点我n+1</button>
+        <button @click="bye">点我销毁VM</button>
+    </div>
+    
+</body>
+
+<script type="text/javascript">
+    Vue.config.producionTip=false
+
+    new Vue({
+        el:'#root',
+        // template:`
+        //     <template>
+        //     <h2>当前的n值是:{{n}}</h2>
+        //     <button @click="add">点我n+1</button>
+        //     </template>
+        // `,
+        data:
+        {
+            n:1
+        },
+        methods:
+        {
+            add()
+            {
+                console.log('add')
+                this.n++
+            },
+            bye()
+            {
+                console.log('bye')
+                this.$destroy()//vue生命周期-销毁
+                console.log(this)
+            }
+        },
+        //生命周期几个阶段
+        beforeCreate()
+        {
+            console.log('beforeCreate')
+        },
+        created()
+        {
+            console.log('created')
+            
+        },
+        //created之后解析vue的元素名称
+        beforeMount()
+        {
+            console.log('beforeMount')
+            // console.log(this)
+            // document.querySelector('h2').innerText='haha'
+            // debugger;
+        },
+        mounted()
+        {
+            console.log('mounted')
+            // console.log(this)
+            // debugger;
+        },
+        //至此整个挂载流程结束
+        //此过程真实DOM加载完成，但是更新数据时页面尚未更新
+        beforeUpdate()
+        {
+
+            console.log('beforeUpdate')
+            // console.log(this)
+            // debugger;
+        },
+        //数据更新传递到页面上
+        updated()
+        {
+            console.log('updated')
+            // console.log(this)
+            // debugger;
+        }
+
+
+    })
+
+</script>
+
+
+</html>
