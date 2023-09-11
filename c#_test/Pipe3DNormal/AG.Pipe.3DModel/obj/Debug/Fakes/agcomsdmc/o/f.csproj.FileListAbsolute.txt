@@ -1,2 +1,0 @@
-F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\AG.Pipe.3DModel\obj\Debug\Fakes\agcomsdmc\o\f.csproj.AssemblyReference.cache
-F:\廊坊系统\最新廊坊CS项目代码\LFGX_CS\AG.Pipe.3DModel\obj\Debug\Fakes\agcomsdmc\o\f.csproj.CoreCompileInputs.cache
